@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&display=swap');
+
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #111;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 0;
+    position: relative;
+    display: inline-block;
+}
+
+/* Racing red lines on both sides */
+.section-title::before,
+.section-title::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 80px;
+    height: 4px;
+    background: repeating-linear-gradient(
+        135deg,
+        red,
+        red 10px,
+        transparent 10px,
+        transparent 15px
+    );
+    transform: translateY(-50%);
+    z-index: -1;
+}
+
+.section-title::before {
+    left: -100px;
+}
+
+.section-title::after {
+    right: -100px;
+}
+
+/* Wrapper to center title and lines */
+.menu-section .title-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.product-card {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+    padding: 0.5rem;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Overlay effect */
+.product-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 0, 0, 0.4);
+    transform: skewX(-20deg);
+    transition: left 0.5s ease;
+    z-index: 0;
+}
+
+.product-card:hover::before {
+    left: 100%;
+}
+
+.product-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.product-card .text-primary {
+    font-size: 1.1rem;
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;
+    padding: 2px 8px;
+    transition: color 0.3s ease;
+}
+
+.product-card .text-primary::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0%;
+    height: 100%;
+    background-color: red;
+    z-index: -1;
+    transition: width 0.4s ease;
+}
+
+.product-card:hover .text-primary::before {
+    width: 100%;
+}
+
+.product-card:hover .text-primary {
+    color: #fff;
+    text-shadow: none;
+}
+
+.product-card .card-body {
+    padding: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.product-card .card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* Center products within each row */
+.menu-section .row {
+    justify-content: center;
+}
+
+@media (max-width: 576px) {
+    .product-card .carousel-img {
+        height: 200px;
+    }
+}

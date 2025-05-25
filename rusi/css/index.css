@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&display=swap');
+
+/* === Banner Section === */
+.banner {
+    width: 100%;
+    overflow: hidden;
+}
+
+.banner-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain; /* Show entire image without cropping */
+}
+
+/* === Product Card Styles === */
+#all-products-section h3 {
+    font-weight: 700;
+    text-align: center;
+    font-size: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Card Wrapper */
+.card {
+    border: none;
+    border-radius: 8px;
+    background-color: #fff;
+    overflow: hidden;
+    padding: 0.5rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+/* Card Image Container */
+.card-img-wrapper {
+    position: relative;
+    width: 100%;
+    height: 230px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.card-img-wrapper img {
+    height: 100%;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    transition: opacity 0.3s ease;
+}
+
+/* Card Content */
+.card-body {
+    padding: 1rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.card-text {
+    font-size: 0.95rem;
+    color: #333;
+}
+
+/* === Responsive Fixes === */
+@media (max-width: 576px) {
+    .banner-img {
+        height: auto;
+    }
+}
+
+.banner-box {
+    position: relative;
+    height: 100%;
+}
+
+.banner-box img {
+    transition: transform 0.4s ease;
+}
+
+.banner-box:hover img {
+    transform: scale(1.03);
+}
+
+.banner-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 0, 0, 0.6);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 1.3rem; /* Increased font size */
+    font-weight: bold;
+    font-family: 'Josefin Sans', sans-serif;
+    opacity: 0;
+    transition: opacity 0.3s ease, font-size 0.3s ease;
+    z-index: 2;
+}
+
+.position-relative:hover .banner-label {
+    opacity: 1;
+}
+
+.banner-box:hover .banner-label {
+    opacity: 1;
+}
+
+.banner-box {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+}
+
+.banner-tall {
+    aspect-ratio: 16 / 9;
+    position: relative;
+    width: 100%;
+}
+
+.banner-tall img {
+    display: block;
+    object-fit: contain; /* ensures the whole image fits */
+    width: 100%;
+    height: 100%;
+    transition: none !important; /* no bounce or scale */
+}
+
+.banner-tall::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6); /* smoked effect */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+}
+
+.banner-tall:hover::after {
+    opacity: 1;
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 700;
+    font-family: 'Josefin Sans', sans-serif;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    text-align: center;
+    padding: 5px 10px;
+}
+
+.banner-tall:hover .banner-overlay {
+    opacity: 1;
+}
+
+
+
+
+
+
